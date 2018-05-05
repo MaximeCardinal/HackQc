@@ -26,6 +26,7 @@ private
 	string courriel_;
 	string motDePasse_;
 	string plaqueImatriculation_;
+
 };
 
 #endif

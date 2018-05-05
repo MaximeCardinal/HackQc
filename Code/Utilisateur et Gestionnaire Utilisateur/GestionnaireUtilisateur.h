@@ -20,8 +20,10 @@ public:
 	~GestionnaireUtilisateur();
 	//Setters
 	void setUtilisateurCourant(Utilisateur* utilisateur);
+	// Getters
+	Utilisateur* getUtilisateurCourant();
 	// Methode Utilisateur
-	void ajouterUtilisateur();
+	void ajouterUtilisateur(string courriel, string mdp, string plaque);
 	void supprimerUtilisateur();
 
 	void chargerUtilisateurs();

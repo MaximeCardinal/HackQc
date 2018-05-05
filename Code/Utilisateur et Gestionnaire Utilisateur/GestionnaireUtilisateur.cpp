@@ -3,6 +3,7 @@
 
 using namespace std;
 // new page
+
 GestionnaireUtilisateur::GestionnaireUtilisateur() : utilisateurCourant_(nullptr) 
 {
 	chargerUtilisateurs();
@@ -22,25 +23,25 @@ void GestionnaireUtilisateur::setUtilisateurCourant(Utilisateur* utilisateur) {
 	utilisateurCourant_ = utilisateur;
 }
 
+// Getters
+Utilisateur* GestionnaireUtilisateur::getUtilisateurCourant() {
+	return utilisateurCourant_;
+}
+
+
+
 // Methode Utilisateur
-void GestionnaireUtilisateur::ajouterUtilisateur() {
-	string courriel;
-	string mdp;
-	string plaque;
+void GestionnaireUtilisateur::ajouterUtilisateur(string courriel, string mdp, string plaque) {
 	banqueUtilisateur_.push_back(new Utilisateur(courriel, mdp, plaque));
 }
 
 void GestionnaireUtilisateur::supprimerUtilisateur(){
-	bool check;
-	cout << "Etes vous sure? "; // pop box
-	cin >> check;
-	if (check) {
-		unsigned int i = 0;
-		while (check) {
-			if (banqueUtilisateur_[i] == utilisateurCourant_) {
-				delete utilisateurCourant_;
-				banqueUtilisateur_.erase(banqueUtilisateur_.begin() + i);
-			}
+	bool check = true;
+	unsigned int i = 0;
+	while (check) {
+		if (banqueUtilisateur_[i] == utilisateurCourant_) {
+			delete utilisateurCourant_;
+			banqueUtilisateur_.erase(banqueUtilisateur_.begin() + i);
 		}
 	}
 }
