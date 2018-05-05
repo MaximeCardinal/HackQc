@@ -4,7 +4,9 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <fstream>
 #include "Stationnement.h"
+#include "Utilisateur.h"
 
 #pragma once
 
@@ -21,6 +23,10 @@ public:
 	// Methode Utilisateur
 	void ajouterUtilisateur();
 	void supprimerUtilisateur();
+
+	void chargerUtilisateurs();
+	void stockerUtilisateur(Utilisateur* utilisateur);
+
 	bool connectionUtilisateur(string courriel, string mdp);
 	void deconnection();
 	void modificationCourriel(string courriel);
@@ -36,6 +42,7 @@ private:
 	Stationnement* stationnementCourant_;
 	vector<Utilisateur*> banqueUtilisateur_;
 	vector <Stationnement*> listeStationnement_;
+	string fileName_;
 };
 
 #endif

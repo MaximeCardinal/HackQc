@@ -1,13 +1,18 @@
 #include "GestionnaireUtilisateur.h"
 
+
 using namespace std;
 // new page
-GestionnaireUtilisateur::GestionnaireUtilisateur() : utilisateurCourant_(nullptr) {}
+GestionnaireUtilisateur::GestionnaireUtilisateur() : utilisateurCourant_(nullptr) 
+{
+	chargerUtilisateurs();
+}
 
 // Destructeur
 GestionnaireUtilisateur::~GestionnaireUtilisateur() {
 	for (unsigned int i = 0; i < banqueUtilisateur_.size(); i++) {
 		utilisateurCourant_ = banqueUtilisateur_[i];
+		stockerUtilisateur();
 		supprimerUtilisateur();
 	}
 }
@@ -104,4 +109,27 @@ void GestionnaireUtilisateur::faireReservation(unsigned int debut, unsigned int 
 void GestionnaireUtilisateur::modifierReservation(unsigned int debut, unsigned int fin) {
 	cancelerReservation();
 	faireReservation(debut, fin);
+}
+
+void GestionnaireUtilisateur::chargerUtilisateurs() {
+
+	ifstream fichier(fileName_);
+	string courriel = "", motDePasse = "", plaque = "";
+	
+	while (!(fichier).eof()) {
+		getline(fichier, courriel, "\n");
+		getline(fichier, motDePasse, "\n");
+		getline(fichier, plaque, "\n");
+		
+		banqueUtilisateur_.push_back(Utilisateur(courriel, motDePasse, plaque));
+	}
+
+}
+
+void GestionnaireUtilisateur::stockerUtilisateur(Utilisateur* utilisateur) {
+
+	ofstream fichier(fileName_);
+	fichier << utilisateur->getCourriel() << "\n"
+			<< utilisateur->getMotDePasse() << "\n"
+			<< utilisateur->getPlaqueImatriculation() << "\n";
 }

@@ -39,11 +39,11 @@ int main() {
 		if (compteur == 6) {
 			listeStationnement.push_back(stationnement);
 		}
-		parse(fichier, compteur, stationnement, donnee);
+		parse(compteur, stationnement, donnee);
 	}
 	ecrireFichier(listeStationnement);
 }
-void parse(ifstream& fichier,int& compteur, Stationnement& stationnement,string& donnee) {
+void parse(int& compteur, Stationnement& stationnement,string& donnee) {
 	switch (compteur) {
 	case 1:
 		stationnement.nom = donnee;
