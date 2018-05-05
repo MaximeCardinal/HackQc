@@ -19,7 +19,7 @@ public:
 	string getName();
 	string getAdresse();
 	string getSite();
-	vector<Utilisateur*> getHoraire(unsigned int i);
+	vector<Utilisateur*> getNbPersonneALheure(unsigned int i);	//Obtenir l
 	unsigned int getNbPlace();
 	//Setters
 	void setNbPlaceDisponible(unsigned int nbPlace);

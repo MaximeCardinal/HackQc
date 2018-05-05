@@ -14,7 +14,7 @@ string Stationnement::getSite() {
 	return web_;
 }
 
-vector<Utilisateur*> Stationnement::getHoraire(unsigned int i) {
+vector<Utilisateur*> Stationnement::getNbPersonneALheure(unsigned int i) {
 	return horaireReservation_[i];
 }
 

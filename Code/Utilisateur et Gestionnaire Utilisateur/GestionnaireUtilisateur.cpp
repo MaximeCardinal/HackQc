@@ -96,7 +96,7 @@ void GestionnaireUtilisateur::faireReservation(unsigned int debut, unsigned int 
 		cin >> stationnement;
 		stationnementCourant_ = trouverStationnement(stationnement);
 		for (unsigned int i = (debut - 7); i < (fin - 7); i++) {
-			if (stationnementCourant_->getHoraire(i).size() < stationnementCourant_->getNbPlace()) {
+			if (stationnementCourant_->getNbPersonneALheure(i).size() < stationnementCourant_->getNbPlace()) {
 				stationnementCourant_->ajouteReservation(i, utilisateurCourant_);
 			}
 			else {
