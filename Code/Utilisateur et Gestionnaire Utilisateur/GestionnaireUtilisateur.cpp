@@ -22,12 +22,6 @@ void GestionnaireUtilisateur::ajouterUtilisateur() {
 	string courriel;
 	string mdp;
 	string plaque;
-	cout << "Courriel: "; // box widget
-	cin >> courriel; 
-	cout << "Mot de Passe: "; // box widget
-	cin >> mdp;
-	cout << "Plaque: "; // box widget
-	cin >> plaque;
 	banqueUtilisateur_.push_back(new Utilisateur(courriel, mdp, plaque));
 }
 

@@ -1,6 +1,10 @@
 #include "Utilisateur.h"
 
-Utilisateur::Utilisateur(string courriel, string motDePasse, string plaqueImatriculation) : courriel_(courriel), motDePasse_(motDePasse), plaqueImatriculation_(plaqueImatriculation), reservation_(false) {}
+Utilisateur::Utilisateur(string courriel, string motDePasse, string plaqueImatriculation,string nbPassager) 
+	: courriel_(courriel), motDePasse_(motDePasse), 
+	plaqueImatriculation_(plaqueImatriculation),
+	nbPassager_(nbPassager), reservation_(false)
+{}
 
 // Getters
 string Utilisateur::getCourriel() const {

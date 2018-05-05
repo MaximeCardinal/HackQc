@@ -10,7 +10,7 @@ using namespace std;
 
 class Utilisateur {
 public:
-	Utilisateur(string courriel, string motDePasse, string plaqueImatriculation);
+	Utilisateur(string courriel, string motDePasse, string plaqueImatriculation,string nbPassager );
 	
 	// Getters
 	string getCourriel() const;
@@ -28,6 +28,7 @@ private:
 	string courriel_;
 	string motDePasse_;
 	string plaqueImatriculation_;
+	string nbPassager_;
 	bool reservation_;
 
 };
