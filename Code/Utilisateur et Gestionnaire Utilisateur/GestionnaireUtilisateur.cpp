@@ -4,7 +4,7 @@
 
 using namespace std;
 
-GestionnaireUtilisateur::GestionnaireUtilisateur() {}
+GestionnaireUtilisateur::GestionnaireUtilisateur() : utilisateurCourant_(nullptr) {}
 
 // new page
 void GestionnaireUtilisateur::ajouterUtilisateur() {
@@ -20,17 +20,35 @@ void GestionnaireUtilisateur::ajouterUtilisateur() {
 	banqueUtilisateur_.push_back(new Utilisateur(courriel, mdp, plaque));
 }
 
-void GestionnaireUtilisateur::supprimerUtilisateur(Utilisateur* utilisateur){
+void GestionnaireUtilisateur::supprimerUtilisateur(){
 	bool check;
 	cout << "Etes vous sure? "; // pop box
 	cin >> check;
 	if (check) {
 		unsigned int i = 0;
 		while (check) {
-			if (banqueUtilisateur_[i] == utilisateur) {
-				delete utilisateur;
+			if (banqueUtilisateur_[i] == utilisateurCourant_) {
+				delete utilisateurCourant_;
 				banqueUtilisateur_.erase(banqueUtilisateur_.begin() + i);
 			}
 		}
 	}
+}
+
+bool GestionnaireUtilisateur::verificationUtilisateur(string courriel, string mdp) {
+	for (unsigned int i = 0; i < banqueUtilisateur_.size(); i++) {
+		if (banqueUtilisateur_[i]->getCourriel() == courriel && banqueUtilisateur_[i]->getMotDePasse() == mdp) {
+			utilisateurCourant_ = banqueUtilisateur_[i];
+			return true;
+		}
+	}
+	return false;
+}
+
+void GestionnaireUtilisateur::modificationCourriel(string courriel) {
+	utilisateurCourant_->setCourriel(courriel);
+}
+
+void GestionnaireUtilisateur::modificationMotDePasse(string mdp) {
+	utilisateurCourant_->setCourriel(mdp);
 }

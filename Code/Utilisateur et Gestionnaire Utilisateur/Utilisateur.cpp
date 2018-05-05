@@ -31,7 +31,7 @@ void Utilisateur::setCourriel(string courriel) {
 }
 
 void Utilisateur::setMotDePasse(string mdp) {
-	setMotDePasse_ = mdp;
+	motDePasse_ = mdp;
 }
 
 void Utilisateur::setPlaqueImatriculation(string plaqueImatriculation) {

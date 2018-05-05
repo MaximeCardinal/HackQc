@@ -9,13 +9,14 @@ class GestionnaireUtilisateur {
 public:
 	GestionnaireUtilisateur() {};
 	void ajouterUtilisateur();
-	void supprimerUtilisateur(Utilisateur* utilisateur);
-	void verificationUtilisateur();
-	void modificationCourriel();
-	void modificationMotDePasse();
+	void supprimerUtilisateur();
+	bool verificationUtilisateur(string courriel, string mdp);
+	void modificationCourriel(string courriel);
+	void modificationMotDePasse(string mdp);
 	void faireUneReservation();
 
 
 private:
+	Utilisateur* utilisateurCourant_;
 	vector<Utilisateur*> banqueUtilisateur_;
 };
