@@ -11,12 +11,10 @@ struct Stationnement {
 	string horaire;
 	string restriction;
 };
-<<<<<<< HEAD
-void parse(ifstream& fichier, int& compteur, Stationnement& stationnement, string& donne);
+void parse(ifstream& fichier, int& compteur, Stationnement& stationnement, string& donnee);
 void ecrireFichier(const vector<Stationnement>& stationnement);
-=======
+//void afficher(const vector<Stationnement>& stationnement);
 
->>>>>>> cac6f75f653c4abfdd0ce71ec21e6ff85dd600f1
 int main() {
 	ifstream fichier("aires-de-stationnement.csv");
 	vector<Stationnement> listeStationnement;
@@ -66,7 +64,7 @@ void parse(ifstream& fichier,int& compteur, Stationnement& stationnement,string&
 		compteur = 0;
 		break;
 	}
-};
+}
 /*void afficher(const vector<Stationnement>& stationnement) {
 	for (unsigned int i = 0; i < stationnement.size(); i++) {
 		cout <<"nom: " <<stationnement[i].nom << endl;
@@ -75,7 +73,6 @@ void parse(ifstream& fichier,int& compteur, Stationnement& stationnement,string&
 		cout <<"restriction: " <<stationnement[i].restriction << endl;
 		cout <<"web: " <<stationnement[i].web << endl<<endl;
 	}
-<<<<<<< HEAD
 }*/
 void ecrireFichier(const vector<Stationnement>& stationnement) {
 	ofstream ficher("data.txt");
@@ -87,6 +84,4 @@ void ecrireFichier(const vector<Stationnement>& stationnement) {
 		ficher << stationnement[i].restriction << "\n";
 	}
 }
-=======
-};*/
->>>>>>> cac6f75f653c4abfdd0ce71ec21e6ff85dd600f1
+
