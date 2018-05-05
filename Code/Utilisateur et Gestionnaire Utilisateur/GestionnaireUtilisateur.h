@@ -30,6 +30,7 @@ public:
 	void chargerUtilisateurs();
 	void stockerUtilisateur(Utilisateur* utilisateur, ofstream& fichier);
 
+	bool verificationCourrielUnique(string courriel);
 	bool connectionUtilisateur(string courriel, string mdp);
 	void deconnection();
 	void modificationCourriel(string courriel);
