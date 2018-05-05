@@ -1,27 +1,25 @@
-#include <iostream>
-#include <string>
 #include "Utilisateur.h"
 
 Utilisateur::Utilisateur(string courriel, string motDePasse, string plaqueImatriculation) : courriel_(courriel), motDePasse_(motDePasse), plaqueImatriculation_(plaqueImatriculation), nbDePersonne_(0), reservation_(false) {}
 
 // Getters
-string Utilisateur::getCourriel() {
+string Utilisateur::getCourriel() const {
 	return courriel_;
 }
 
-string Utilisateur::getMotDePasse() {
+string Utilisateur::getMotDePasse() const {
 	return motDePasse_;
 }
 
-string Utilisateur::getPlaqueImatriculation() {
+string Utilisateur::getPlaqueImatriculation() const {
 	return plaqueImatriculation_;
 }
 
-int Utilisateur::nbDePersonne() {
+int Utilisateur::nbDePersonne() const {
 	return nbDePersonne_;
 }
 
-bool Utilisateur::reservation() {
+bool Utilisateur::reservation() const {
 	return reservation_;
 }
 

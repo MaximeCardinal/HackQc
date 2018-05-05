@@ -7,14 +7,16 @@ using namespace std;
 
 class GestionnaireUtilisateur {
 public:
-	GestionnaireUtilisateur() {};
+	// Constructeur
+	GestionnaireUtilisateur();
+	// Destructeur
+	~GestionnaireUtilisateur();
+	// Methode
 	void ajouterUtilisateur();
 	void supprimerUtilisateur();
 	bool verificationUtilisateur(string courriel, string mdp);
 	void modificationCourriel(string courriel);
 	void modificationMotDePasse(string mdp);
-	void faireUneReservation();
-
 
 private:
 	Utilisateur* utilisateurCourant_;
