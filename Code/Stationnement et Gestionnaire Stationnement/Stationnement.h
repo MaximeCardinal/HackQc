@@ -3,6 +3,8 @@
 #include <vector>
 #include "Utilisateur.h"
 
+#pragma once
+
 using namespace std;
 
 class Stationnement {
