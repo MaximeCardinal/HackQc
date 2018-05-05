@@ -12,7 +12,7 @@ struct Stationnement {
 	string restriction;
 };
 void parse(ifstream& fichier, int& compteur, Stationnement& stationnement, string& donne);
-//void afficher(const vector<Stationnement>& stationnement);
+void ecrireFichier(const vector<Stationnement>& stationnement);
 int main() {
 	ifstream fichier("aires-de-stationnement.csv");
 	vector<Stationnement> listeStationnement;
@@ -39,6 +39,7 @@ int main() {
 		}
 		parse(fichier, compteur, stationnement, donne);
 	}
+	ecrireFichier(listeStationnement);
 }
 void parse(ifstream& fichier,int& compteur, Stationnement& stationnement,string& donne) {
 	switch (compteur) {
@@ -71,3 +72,13 @@ void parse(ifstream& fichier,int& compteur, Stationnement& stationnement,string&
 		cout <<"web: " <<stationnement[i].web << endl<<endl;
 	}
 }*/
+void ecrireFichier(const vector<Stationnement>& stationnement) {
+	ofstream ficher("data.txt");
+	for (unsigned int i = 0; i < stationnement.size(); i++) {
+		ficher << stationnement[i].nom << "\n";
+		ficher << stationnement[i].adresse << "\n";
+		ficher << stationnement[i].web << "\n";
+		ficher << stationnement[i].horaire << "\n";
+		ficher << stationnement[i].restriction << "\n";
+	}
+}
