@@ -30,7 +30,6 @@ private:
 	string plaqueImatriculation_;
 	string nbPassager_;
 	bool reservation_;
-
 };
 
 #endif
