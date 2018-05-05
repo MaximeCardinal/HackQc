@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 
+#pragma once
+
 using namespace std;
 
 class Utilisateur {
@@ -8,11 +10,11 @@ public:
 	Utilisateur(string courriel, string motDePasse, string plaqueImatriculation);
 	
 	// Getters
-	string getCourriel();
-	string getMotDePasse();
-	string getPlaqueImatriculation();
-	int nbDePersonne();
-	bool reservation();
+	string getCourriel() const;
+	string getMotDePasse() const;
+	string getPlaqueImatriculation() const;
+	int nbDePersonne() const;
+	bool reservation() const;
 
 	// Setters
 	void setCourriel(string courriel);

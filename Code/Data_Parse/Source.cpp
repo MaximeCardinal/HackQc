@@ -11,13 +11,17 @@ struct Stationnement {
 	string horaire;
 	string restriction;
 };
+<<<<<<< HEAD
 void parse(ifstream& fichier, int& compteur, Stationnement& stationnement, string& donne);
 void ecrireFichier(const vector<Stationnement>& stationnement);
+=======
+
+>>>>>>> cac6f75f653c4abfdd0ce71ec21e6ff85dd600f1
 int main() {
 	ifstream fichier("aires-de-stationnement.csv");
 	vector<Stationnement> listeStationnement;
 	Stationnement stationnement;
-	string donne;
+	string donnee;
 	string temp;
 	int compteur=0;
 	char indicateur;
@@ -25,44 +29,44 @@ int main() {
 		compteur++;
 		fichier.get(indicateur);
 		temp = "";
-		donne = "";
+		donnee = "";
 		if (indicateur == '"') {
-			getline(fichier, donne, '"');
+			getline(fichier, donnee, '"');
 		}
 		else {
-			donne = indicateur;
+			donnee = indicateur;
 			getline(fichier, temp, ',');
-			donne += temp;
+			donnee += temp;
 		}
 		if (compteur == 6) {
 			listeStationnement.push_back(stationnement);
 		}
-		parse(fichier, compteur, stationnement, donne);
+		parse(fichier, compteur, stationnement, donnee);
 	}
 	ecrireFichier(listeStationnement);
 }
-void parse(ifstream& fichier,int& compteur, Stationnement& stationnement,string& donne) {
+void parse(ifstream& fichier,int& compteur, Stationnement& stationnement,string& donnee) {
 	switch (compteur) {
 	case 1:
-		stationnement.nom = donne;
+		stationnement.nom = donnee;
 		break;
 	case 2:
-		stationnement.adresse = donne;
+		stationnement.adresse = donnee;
 		break;
 	case 3:
-		stationnement.web = donne;
+		stationnement.web = donnee;
 		break;
 	case 4:
-		stationnement.horaire = donne;
+		stationnement.horaire = donnee;
 		break;
 	case 5:
-		stationnement.restriction = donne;
+		stationnement.restriction = donnee;
 		break;
 	case 10:
 		compteur = 0;
 		break;
 	}
-}
+};
 /*void afficher(const vector<Stationnement>& stationnement) {
 	for (unsigned int i = 0; i < stationnement.size(); i++) {
 		cout <<"nom: " <<stationnement[i].nom << endl;
@@ -71,6 +75,7 @@ void parse(ifstream& fichier,int& compteur, Stationnement& stationnement,string&
 		cout <<"restriction: " <<stationnement[i].restriction << endl;
 		cout <<"web: " <<stationnement[i].web << endl<<endl;
 	}
+<<<<<<< HEAD
 }*/
 void ecrireFichier(const vector<Stationnement>& stationnement) {
 	ofstream ficher("data.txt");
@@ -82,3 +87,6 @@ void ecrireFichier(const vector<Stationnement>& stationnement) {
 		ficher << stationnement[i].restriction << "\n";
 	}
 }
+=======
+};*/
+>>>>>>> cac6f75f653c4abfdd0ce71ec21e6ff85dd600f1

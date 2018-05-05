@@ -1,12 +1,17 @@
-#include <iostream>
-#include <string>
 #include "GestionnaireUtilisateur.h"
 
 using namespace std;
-
+// new page
 GestionnaireUtilisateur::GestionnaireUtilisateur() : utilisateurCourant_(nullptr) {}
 
-// new page
+// Destructeur
+GestionnaireUtilisateur::~GestionnaireUtilisateur() {
+	for (unsigned int i = 0; i < banqueUtilisateur_.size(); i++) {
+		utilisateurCourant_ = banqueUtilisateur_[i];
+		supprimerUtilisateur();
+	}
+}
+
 void GestionnaireUtilisateur::ajouterUtilisateur() {
 	string courriel;
 	string mdp;
