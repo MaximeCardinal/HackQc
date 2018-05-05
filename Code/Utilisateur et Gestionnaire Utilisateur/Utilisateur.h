@@ -22,7 +22,7 @@ public:
 	void setMotDePasse(string mdp);
 	void setPlaqueImatriculation(string plaqueImatriculation);
 
-private
+private:
 	string courriel_;
 	string motDePasse_;
 	string plaqueImatriculation_;

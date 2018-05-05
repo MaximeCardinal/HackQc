@@ -12,6 +12,8 @@
 
 using namespace std;
 
+const string FILENAME_ = "BDD_UTILISATEUR.txt";
+
 class GestionnaireUtilisateur {
 public:
 	// Constructeur
@@ -24,10 +26,9 @@ public:
 	Utilisateur* getUtilisateurCourant();
 	// Methode Utilisateur
 	void ajouterUtilisateur(string courriel, string mdp, string plaque);
-	void supprimerUtilisateur();
 
 	void chargerUtilisateurs();
-	void stockerUtilisateur(Utilisateur* utilisateur);
+	void stockerUtilisateur(Utilisateur* utilisateur, ofstream& fichier);
 
 	bool connectionUtilisateur(string courriel, string mdp);
 	void deconnection();
@@ -44,7 +45,6 @@ private:
 	Stationnement* stationnementCourant_;
 	vector<Utilisateur*> banqueUtilisateur_;
 	vector <Stationnement*> listeStationnement_;
-	string fileName_;
 };
 
 #endif
