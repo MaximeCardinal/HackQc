@@ -1,1 +1,0 @@
-Folder pour le code general du Produit
