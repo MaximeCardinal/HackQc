@@ -14,6 +14,14 @@ string Stationnement::getSite() {
 	return web_;
 }
 
+vector<Utilisateur*> Stationnement::getHoraire(unsigned int i) {
+	return horaireReservation_[i];
+}
+
+unsigned int Stationnement::getNbPlace() {
+	return ndPlaceDisponible_;
+}
+
 void Stationnement::setNbPlaceDisponible(unsigned int nbPlace) {
 	ndPlaceDisponible_ = nbPlace;
 }
@@ -24,5 +32,13 @@ void Stationnement::ajouteReservation(unsigned int heure, Utilisateur* utilisate
 	}
 	else {
 		cout << "Il n'y a plus de stationnement disponible a cette heure la." << endl; // Hidden l'option de la box (if nbPlaceComble_ == nbPlaceDisponible, envoi signal)
+	}
+}
+
+void Stationnement::enleverReservation(unsigned int heure, Utilisateur* utilisateur) {
+	for (unsigned int i = 0; i < horaireReservation_[heure].size(); i++) {
+		if (horaireReservation_[heure][i] == utilisateur) {
+			horaireReservation_[heure].erase(horaireReservation_[heure].begin() + i);
+		}
 	}
 }

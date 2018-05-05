@@ -1,6 +1,6 @@
 #include "Utilisateur.h"
 
-Utilisateur::Utilisateur(string courriel, string motDePasse, string plaqueImatriculation) : courriel_(courriel), motDePasse_(motDePasse), plaqueImatriculation_(plaqueImatriculation), nbDePersonne_(0), reservation_(false) {}
+Utilisateur::Utilisateur(string courriel, string motDePasse, string plaqueImatriculation) : courriel_(courriel), motDePasse_(motDePasse), plaqueImatriculation_(plaqueImatriculation), reservation_(false) {}
 
 // Getters
 string Utilisateur::getCourriel() const {
@@ -15,9 +15,6 @@ string Utilisateur::getPlaqueImatriculation() const {
 	return plaqueImatriculation_;
 }
 
-int Utilisateur::nbDePersonne() const {
-	return nbDePersonne_;
-}
 
 bool Utilisateur::reservation() const {
 	return reservation_;
@@ -36,9 +33,6 @@ void Utilisateur::setPlaqueImatriculation(string plaqueImatriculation) {
 	plaqueImatriculation_ = plaqueImatriculation;
 }
 
-void Utilisateur::setNbDePersonne(int nbDePersonne) {
-	nbDePersonne_ = nbDePersonne;
-}
 
 void Utilisateur::setReservation(bool reservation) {
 	reservation_ = reservation;

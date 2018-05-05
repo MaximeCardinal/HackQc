@@ -1,7 +1,9 @@
+#ifndef GESTIONNAIRE_UTILISATEUR_H 
+#define GESTIONNAIRE_UTILISATEUR_H 
+
 #include <iostream>
 #include <string>
 #include <vector>
-#include "Utilisateur.h"
 #include "Stationnement.h"
 
 #pragma once
@@ -19,17 +21,21 @@ public:
 	// Methode Utilisateur
 	void ajouterUtilisateur();
 	void supprimerUtilisateur();
-	bool verificationUtilisateur(string courriel, string mdp);
+	bool connectionUtilisateur(string courriel, string mdp);
+	void deconnection();
 	void modificationCourriel(string courriel);
 	void modificationMotDePasse(string mdp);
 	// Methode Stationement
-	void setUtilisateurCourant(Utilisateur* utilisateur);
+	Stationnement* trouverStationnement(string stationnement);
 	void faireReservation(unsigned int debut, unsigned int fin);
 	void cancelerReservation();
 	void modifierReservation(unsigned int debut, unsigned int fin);
 
 private:
 	Utilisateur* utilisateurCourant_;
+	Stationnement* stationnementCourant_;
 	vector<Utilisateur*> banqueUtilisateur_;
 	vector <Stationnement*> listeStationnement_;
 };
+
+#endif

@@ -1,3 +1,6 @@
+#ifndef UTILISATEUR_H 
+#define UTILISATEUR_H
+
 #include <iostream>
 #include <string>
 
@@ -13,21 +16,20 @@ public:
 	string getCourriel() const;
 	string getMotDePasse() const;
 	string getPlaqueImatriculation() const;
-	int nbDePersonne() const;
 	bool reservation() const;
 
 	// Setters
 	void setCourriel(string courriel);
 	void setMotDePasse(string mdp);
 	void setPlaqueImatriculation(string plaqueImatriculation);
-	void setNbDePersonne(int nbDePersonne);
 	void setReservation(bool reservation);
 
 private:
 	string courriel_;
 	string motDePasse_;
 	string plaqueImatriculation_;
-	int nbDePersonne_;
 	bool reservation_;
 
 };
+
+#endif

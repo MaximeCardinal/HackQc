@@ -1,3 +1,7 @@
+#ifndef STATIONNEMENT_H 
+#define STATIONNEMENT_H
+
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -15,10 +19,13 @@ public:
 	string getName();
 	string getAdresse();
 	string getSite();
+	vector<Utilisateur*> getHoraire(unsigned int i);
+	unsigned int getNbPlace();
 	//Setters
 	void setNbPlaceDisponible(unsigned int nbPlace);
 	// Methode
 	void ajouteReservation(unsigned int heure, Utilisateur* utilisateur);
+	void enleverReservation(unsigned int heure, Utilisateur* utilisateur);
 
 private:
 	string nom_;
@@ -28,3 +35,5 @@ private:
 	unsigned int ndPlaceDisponible_;
 
 };
+
+#endif
