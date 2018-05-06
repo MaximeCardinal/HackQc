@@ -29,6 +29,7 @@ public:
 	void chargerUtilisateurs();
 
 	bool connectionUtilisateur(string courriel, string mdp);
+    bool verificationDouble(string courriel);
 	void deconnection();
 	void modificationCourriel(string courriel);
 	void modificationMotDePasse(string mdp);

@@ -38,8 +38,10 @@ int main(int argc, char *argv[])
     GestionnaireUtilisateur gestionnaire;
     QApplication a(argc, argv);
     MainWindow z;
-    z.show();
     Login w(0,gestionnaire);
+    QObject::connect(&z, SIGNAL(showLogin()), &w, SLOT(reOpenLogin()));
+    z.show();
+
     w.show();
     return a.exec();
 }

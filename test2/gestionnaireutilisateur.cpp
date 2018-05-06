@@ -57,9 +57,20 @@ Utilisateur* GestionnaireUtilisateur::getUtilisateurCourant() {
 
 
 // Methode Utilisateur
+bool GestionnaireUtilisateur::verificationDouble(string courriel) {
+    for (unsigned int i = 0; i < banqueUtilisateur_.size(); i++) {
+        if (banqueUtilisateur_[i]->getCourriel() == courriel) {
+            return false;
+        }
+    }
+    return true;
+}
+
 void GestionnaireUtilisateur::ajouterUtilisateur(string courriel, string mdp, string plaque) {
+    if(verificationDouble(courriel)){
 	Utilisateur* utilisateur = new Utilisateur(courriel, mdp, plaque);
 	banqueUtilisateur_.push_back(utilisateur);
+    }
 }
 
 

@@ -18,11 +18,11 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-/*
+
 void MainWindow::on_pushButton_Deconnexion_clicked() {
-    Ui::Login->show();
+    emit showLogin();
 }
-*/
+
 void MainWindow::on_pushButton_Reservation_clicked()
 {
     Reservation reservation;

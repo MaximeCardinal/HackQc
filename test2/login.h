@@ -24,6 +24,8 @@ private slots:
 
     void on_pushButton_CreerNouvCompte_clicked();
 
+    void reOpenLogin();
+
 private:
     Ui::Login *ui;
     GestionnaireUtilisateur& gestionnaireUtilisateur_;

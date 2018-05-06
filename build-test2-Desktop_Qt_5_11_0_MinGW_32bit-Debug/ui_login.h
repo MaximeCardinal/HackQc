@@ -60,7 +60,7 @@ public:
         label_2->setFont(font2);
         label_3 = new QLabel(Login);
         label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(300, 80, 141, 41));
+        label_3->setGeometry(QRect(300, 60, 141, 41));
         QFont font3;
         font3.setPointSize(10);
         label_3->setFont(font3);
@@ -74,6 +74,7 @@ public:
         lineEdit_MotDePasseConnexion->setObjectName(QStringLiteral("lineEdit_MotDePasseConnexion"));
         lineEdit_MotDePasseConnexion->setGeometry(QRect(10, 170, 231, 22));
         lineEdit_MotDePasseConnexion->setFont(font4);
+        lineEdit_MotDePasseConnexion->setEchoMode(QLineEdit::Password);
         pushButton_SeConnecter = new QPushButton(Login);
         pushButton_SeConnecter->setObjectName(QStringLiteral("pushButton_SeConnecter"));
         pushButton_SeConnecter->setGeometry(QRect(60, 210, 131, 28));
@@ -91,13 +92,15 @@ public:
         lineEdit_MotDePasseNouvCompte->setObjectName(QStringLiteral("lineEdit_MotDePasseNouvCompte"));
         lineEdit_MotDePasseNouvCompte->setGeometry(QRect(300, 170, 231, 22));
         lineEdit_MotDePasseNouvCompte->setFont(font4);
+        lineEdit_MotDePasseNouvCompte->setEchoMode(QLineEdit::Password);
         lineEdit_PlaqueNouvCompte = new QLineEdit(Login);
         lineEdit_PlaqueNouvCompte->setObjectName(QStringLiteral("lineEdit_PlaqueNouvCompte"));
         lineEdit_PlaqueNouvCompte->setGeometry(QRect(300, 210, 231, 22));
         lineEdit_PlaqueNouvCompte->setFont(font4);
+        lineEdit_PlaqueNouvCompte->setMaxLength(6);
         pushButton_CreerNouvCompte = new QPushButton(Login);
         pushButton_CreerNouvCompte->setObjectName(QStringLiteral("pushButton_CreerNouvCompte"));
-        pushButton_CreerNouvCompte->setGeometry(QRect(350, 240, 131, 28));
+        pushButton_CreerNouvCompte->setGeometry(QRect(350, 250, 131, 28));
         pushButton_CreerNouvCompte->setFont(font4);
         label_4 = new QLabel(Login);
         label_4->setObjectName(QStringLiteral("label_4"));
@@ -119,7 +122,7 @@ public:
         pushButton_SeConnecter->setText(QApplication::translate("Login", "Se connecter", nullptr));
         lineEdit_UtilisateurNouvCompte->setText(QApplication::translate("Login", "Courriel", nullptr));
         lineEdit_MotDePasseNouvCompte->setText(QApplication::translate("Login", "Mot de passe", nullptr));
-        lineEdit_PlaqueNouvCompte->setText(QApplication::translate("Login", "Plaque d'immatriculation", nullptr));
+        lineEdit_PlaqueNouvCompte->setText(QApplication::translate("Login", "Plaque", nullptr));
         pushButton_CreerNouvCompte->setText(QApplication::translate("Login", "Creer le compte", nullptr));
         label_4->setText(QApplication::translate("Login", "Le compte n'est pas valide", nullptr));
     } // retranslateUi

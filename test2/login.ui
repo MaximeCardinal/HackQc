@@ -61,7 +61,7 @@
    <property name="geometry">
     <rect>
      <x>300</x>
-     <y>80</y>
+     <y>60</y>
      <width>141</width>
      <height>41</height>
     </rect>
@@ -109,6 +109,9 @@
    </property>
    <property name="text">
     <string>Mot de passe</string>
+   </property>
+   <property name="echoMode">
+    <enum>QLineEdit::Password</enum>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_SeConnecter">
@@ -177,6 +180,9 @@
    <property name="text">
     <string>Mot de passe</string>
    </property>
+   <property name="echoMode">
+    <enum>QLineEdit::Password</enum>
+   </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_PlaqueNouvCompte">
    <property name="geometry">
@@ -193,14 +199,17 @@
     </font>
    </property>
    <property name="text">
-    <string>Plaque d'immatriculation</string>
+    <string>Plaque</string>
+   </property>
+   <property name="maxLength">
+    <number>6</number>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_CreerNouvCompte">
    <property name="geometry">
     <rect>
      <x>350</x>
-     <y>240</y>
+     <y>250</y>
      <width>131</width>
      <height>28</height>
     </rect>

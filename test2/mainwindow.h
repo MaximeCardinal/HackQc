@@ -16,9 +16,12 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+signals:
+    void showLogin();
+
 private slots:
     //void on_pushButton_Confirmation_clicked();
-    //void on_pushButton_Deconnexion_clicked();
+    void on_pushButton_Deconnexion_clicked();
     void on_pushButton_Reservation_clicked();
 
 private:
