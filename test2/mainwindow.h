@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "login.h"
 
 namespace Ui {
 class MainWindow;
@@ -17,7 +18,7 @@ public:
 
 private slots:
     //void on_pushButton_Confirmation_clicked();
-
+    //void on_pushButton_Deconnexion_clicked();
     void on_pushButton_Reservation_clicked();
 
 private:

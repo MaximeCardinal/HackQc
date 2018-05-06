@@ -10,18 +10,6 @@ GestionnaireUtilisateur::GestionnaireUtilisateur() : utilisateurCourant_(nullptr
 }
 
 void GestionnaireUtilisateur::chargerUtilisateurs() {
-
-/*ifstream fichier(FILENAME_);
-	string courriel, motDePasse, plaque;
-    while (!ws(fichier).eof()) {
-        getline(fichier, courriel, '\n');
-		getline(fichier, motDePasse, '\n');
-		getline(fichier, plaque, '\n');
-		Utilisateur* utilisateur = new Utilisateur(courriel, motDePasse, plaque);
-		banqueUtilisateur_.push_back(utilisateur);
-	}
-	fichier.close();
-    */
     QFile fichier("bdd.txt");
     if(!fichier.open(QIODevice::ReadOnly)){
         return;
@@ -40,15 +28,6 @@ void GestionnaireUtilisateur::chargerUtilisateurs() {
 
 // Destructeur
 GestionnaireUtilisateur::~GestionnaireUtilisateur() {
-    /*ofstream fichier(FILENAME_);
-	for (int i = banqueUtilisateur_.size() - 1; i >= 0; i--) {
-		stockerUtilisateur(banqueUtilisateur_[i], fichier);
-		delete banqueUtilisateur_[i];
-		banqueUtilisateur_.pop_back();
-	}
-	fichier.close();
-    */
-
     QFile fichier("bdd.txt");
     if(fichier.open(QIODevice::WriteOnly)){
         QTextStream out(&fichier);
@@ -88,7 +67,7 @@ bool GestionnaireUtilisateur::connectionUtilisateur(string courriel, string mdp)
 	for (unsigned int i = 0; i < banqueUtilisateur_.size(); i++) {
 		if (banqueUtilisateur_[i]->getCourriel() == courriel && banqueUtilisateur_[i]->getMotDePasse() == mdp) {
 			utilisateurCourant_ = banqueUtilisateur_[i];
-			return true;	//Signal connection
+            return true;
 		}
 	}
 	return false;
