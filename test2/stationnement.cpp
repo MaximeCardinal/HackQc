@@ -1,6 +1,7 @@
 #include "stationnement.h"
 
-Stationnement::Stationnement(string nom, string adresse, string web) : nom_(nom), adresse_(adresse), web_(web) {}
+Stationnement::Stationnement(string nom, string adresse, string web,string horaire,string restriction)
+    : nom_(nom), adresse_(adresse), web_(web),horaire_(horaire),restriction_(restriction){}
 
 string Stationnement::getName() {
     return nom_;
@@ -13,7 +14,12 @@ string Stationnement::getAdresse() {
 string Stationnement::getSite() {
     return web_;
 }
-
+string Stationnement::getHoraire() {
+    return horaire_;
+}
+string Stationnement::getRestriction() {
+    return restriction_;
+}
 vector<Utilisateur*> Stationnement::getNbPersonneALheure(unsigned int i) {
     return horaireReservation_[i];
 }

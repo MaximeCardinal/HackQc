@@ -6,43 +6,39 @@
 #include <string>
 #include <vector>
 #include "gestionnaireutilisateur.h"
+#include <QFile>
+#include <QTextStream>
 
 using namespace std;
 
-/*struct Stationnement {
-    string nom;
-    string adresse;
-    string web;
-    string horaire;
-    string restriction;
-};*/
 int main(int argc, char *argv[])
 {
-    /*ifstream fichier("data.txt");
-    string donnee="";
+    QFile inputFile("D:/QTInterfaceBuilder/Projects/test2/data.txt");
     vector<Stationnement> listeStationnement;
-    Stationnement stationnement;
-    while(!ws(fichier).eof()){
-        getline(fichier,donnee,'\n');
-        stationnement.nom=donnee;
-        getline(fichier,donnee,'\n');
-        stationnement.adresse=donnee;
-        getline(fichier,donnee,'\n');
-        stationnement.web=donnee;
-        getline(fichier,donnee,'\n');
-        stationnement.horaire=donnee;
-        getline(fichier,donnee,'\n');
-        stationnement.restriction=donnee;
-        listeStationnement.push_back(stationnement);
-    }*/
+    if (inputFile.open(QIODevice::ReadOnly))
+    {
+       QTextStream in(&inputFile);
+       while (!in.atEnd())
+       {
+          string nom = (in.readLine()).toStdString();
+          string adresse = (in.readLine()).toStdString();
+          string web = (in.readLine()).toStdString();
+          string horaire = (in.readLine()).toStdString();
+          string restriction = (in.readLine()).toStdString();
+          listeStationnement.push_back(Stationnement(nom,adresse,web,horaire,restriction));
+       }
+       inputFile.close();
+    }
     GestionnaireUtilisateur gestionnaire;
     QApplication a(argc, argv);
-    MainWindow z;
+    MainWindow z(0,gestionnaire,listeStationnement);
     Login w(0,gestionnaire);
-    QObject::connect(&z, SIGNAL(showLogin()), &w, SLOT(reOpenLogin()));
+    QObject::connect(&z,SIGNAL(signalConnexion()),&w,SLOT(displayLogin()));
+    QObject::connect(&z,SIGNAL(signalDeconnexion()),&w,SLOT(displayLogin()));
+    QObject::connect(&w,SIGNAL(connectionUtilisateur()),&z,SLOT(changeUserCourant()));
+    QObject::connect(&w,SIGNAL(creationUtilisateur()),&z,SLOT(changeUserCourant()));
     z.show();
-
-    w.show();
+    //w.show();
     return a.exec();
 }
 

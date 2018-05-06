@@ -1,13 +1,12 @@
 #ifndef GESTIONNAIRE_UTILISATEUR_H 
 #define GESTIONNAIRE_UTILISATEUR_H 
 
-#include <QFile>
-#include <QTextStream>
 #include <iostream>
 #include <string>
 #include <vector>
 #include <fstream>
 #include "stationnement.h"
+#include <QFile>
 
 #pragma once
 
@@ -25,15 +24,12 @@ public:
 	Utilisateur* getUtilisateurCourant();
 	// Methode Utilisateur
 	void ajouterUtilisateur(string courriel, string mdp, string plaque);
-
 	void chargerUtilisateurs();
-
 	bool connectionUtilisateur(string courriel, string mdp);
-    bool verificationDouble(string courriel);
 	void deconnection();
-	void modificationCourriel(string courriel);
-	void modificationMotDePasse(string mdp);
-
+    bool verificationDouble(string courriel);
+    /*void modificationCourriel(string courriel);
+    void modificationMotDePasse(string mdp);*/
 	// Methode Stationement
 	Stationnement* trouverStationnement(string stationnement);
 	void faireReservation(unsigned int debut, unsigned int fin);
